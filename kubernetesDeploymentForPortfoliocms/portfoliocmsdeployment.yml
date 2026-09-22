@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portfoliocms-deployment
+  labels:
+    app: portfoliocms
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: portfoliocms
+  template:
+    metadata:
+      labels:
+        app: portfoliocms
+    spec:
+      containers:
+      - name: portfoliocmsfrontend
+        image: muhammadqaissum/portfoliocmsfrontendimages:v2
+        ports:
+        - containerPort: 5173
+
+  
+
