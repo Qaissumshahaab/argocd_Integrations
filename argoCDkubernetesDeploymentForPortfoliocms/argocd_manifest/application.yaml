@@ -1,15 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: my-k8s-app
+  name: my-k8s-portfoliocms
   namespace: argocd
 spec:
-  project: my-project
+  project: argocd-portfoliocms
 
   source:
-    repoURL: https://github.com/YOUR_USERNAME/YOUR_REPO.git
+    repoURL: https://github.com/Qaissumshahaab/argocd_Integrations.git
     targetRevision: main
-    path: .
+    path: argoCDkubernetesDeploymentForPortfoliocms/k8s
 
   destination:
     server: https://172.25.0.3:6443
